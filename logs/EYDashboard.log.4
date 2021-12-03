@@ -1,0 +1,89 @@
+2020-07-24 20:19:17,517 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:20:27,920 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:24:35,274 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:25:14,980 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:27:53,179 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:28:03,860 ERROR: Exception on /groups/11 [GET] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 109, in groups
+    group_companies=group_companies
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 36, in template
+    <form id='add-company-to-group' action="{{ url_for('group'), group_id=group.id }}" method="post">
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
+2020-07-24 20:28:36,140 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:28:43,931 ERROR: Exception on /groups/11 [GET] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 109, in groups
+    group_companies=group_companies
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\base.html", line 85, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 36, in block "content"
+    <form id='add-company-to-group' action="{{ url_for('group', group_id=group.id) }}" method="post">
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'group' with values ['group_id']. Did you mean 'groups' instead?
+2020-07-24 20:29:01,551 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:45:36,864 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:50:47,895 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:51:32,253 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-24 20:52:22,043 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]

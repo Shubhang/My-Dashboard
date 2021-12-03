@@ -1,0 +1,104 @@
+2020-07-13 15:36:51,571 ERROR: Exception on /summaries [POST] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 122, in summaries
+    summaries = getCompliance(Company(companyName), source, multiplier=multiplier, custom_sectors=override_sectors) # update later when we add preferences
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\summary\compliance.py", line 248, in getCompliance
+    page = requests.get(URL[1]) # index 1 is URL, 0 is sector
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\requests\sessions.py", line 459, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'Business of Law': No schema supplied. Perhaps you meant http://Business of Law?
+2020-07-13 15:38:40,686 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:38:59,457 ERROR: Exception on /dashboard [POST] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 83, in dashboard
+    return make_dashboard(companyName)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\dashboard.py", line 42, in dashboard
+    companyObject = Company(companyName)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\company.py", line 26, in __init__
+    self.__data = self.__tickerObj.info # 2 web requests
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\yfinance\ticker.py", line 138, in info
+    return self.get_info()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\yfinance\base.py", line 415, in get_info
+    self._get_fundamentals(proxy)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\yfinance\base.py", line 284, in _get_fundamentals
+    holders = _pd.read_html(url)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\pandas\io\html.py", line 1105, in read_html
+    displayed_only=displayed_only,
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\pandas\io\html.py", line 888, in _parse
+    parser = _parser_dispatch(flav)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\pandas\io\html.py", line 835, in _parser_dispatch
+    raise ImportError("html5lib not found, please install it")
+ImportError: html5lib not found, please install it
+2020-07-13 15:39:18,046 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:08:56,613 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:09:13,758 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:09:55,016 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:10:05,629 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:10:15,932 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:11:13,163 ERROR: Exception on /create_group [POST] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 76, in create_group
+    creator=current_user
+  File "<string>", line 4, in __init__
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\sqlalchemy\orm\state.py", line 433, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 69, in __exit__
+    exc_value, with_traceback=exc_tb,
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\sqlalchemy\orm\state.py", line 430, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 840, in _declarative_constructor
+    "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+TypeError: 'creator' is an invalid keyword argument for Group
+2020-07-16 16:14:10,060 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]

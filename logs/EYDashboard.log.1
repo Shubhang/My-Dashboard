@@ -1,0 +1,106 @@
+2020-08-02 12:38:17,732 ERROR: Exception on /groups/1 [GET] [in c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 131, in groups
+    group_companies=group_companies
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\base.html", line 86, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 15, in block "content"
+    <p>You can share this group with others by sharing this link: <a href="{{ url_for(request.endpoint) }}">{{ url_for(request.endpoint) }}</a></p>
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'groups'. Did you forget to specify values ['group_id']?
+2020-08-02 12:45:11,953 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:45:28,712 ERROR: Exception on /groups/1 [GET] [in c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 131, in groups
+    group_companies=group_companies
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\base.html", line 86, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 15, in block "content"
+    <!-- <p>You can share this group with others by sharing this link: <a href="{{ url_for(request.endpoint) }}">{{ url_for(request.endpoint) }}</a></p> -->
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'groups'. Did you forget to specify values ['group_id']?
+2020-08-02 12:46:37,887 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:49:50,172 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:51:06,682 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:54:27,777 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:05:51,903 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:24:35,155 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:25:50,552 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:26:14,489 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:26:47,120 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:28:08,587 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:28:39,108 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:28:58,970 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:29:25,136 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:29:41,921 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:30:01,499 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:30:18,265 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:30:57,374 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:44:45,420 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 13:47:00,525 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]

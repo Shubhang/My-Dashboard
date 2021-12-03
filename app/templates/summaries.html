@@ -1,0 +1,64 @@
+<head>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+    <!-- Other CSS-->
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class='flex-container'>
+        {% for summaries in all_summaries %}
+            <div class='flex-child'>
+                <!-- HEADER FOR EACH SOURCE -->
+                <div style='text-align: center;'>
+                    <h6><i>Articles from</i></h6><strong><h4 class='header'></h4><a style='color:black' target='_blank' href=" {{ summaries['link'] }} ">{{ summaries['source'] }}</a></strong></h4>
+                </div>
+
+                <hr>
+                    
+                <!-- THE SUMMARIES -->
+                <div style='overflow-y: auto; overflow-x: hidden;'>
+                    {% for summary in summaries['summaries'] %}
+                            {%if summary.text != None %}
+                                    <div>
+                                        <h4>{{summary.title}}</h4>
+                                        <p style="color: black;">
+                                            <strong>
+                                                {{ summary.sector }} ({{ summary.date }})
+                                            </strong>
+                                        </p>
+                                        <p><i><a class='card-link' href='{{summary.link}}' target='_blank'>link to full article</a></i></p>
+                                        <div style="overflow-y:auto; height:auto; max-height:500px;">
+                                            <p align="left" style="padding:2px; color: black;">
+                                                {{ summary.text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                            {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <style>
+
+    .flex-container {
+        display: flex;
+        margin-right: 20px;
+        overflow: hidden;
+    }
+
+    .flex-child {
+        flex: 1;
+        border: 2px solid grey;
+        padding: 5px;
+        overflow: auto;
+    }  
+
+    .flex-child:first-child {
+        margin-right: 20px;
+    } 
+
+    </style>
+</body>

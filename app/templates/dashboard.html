@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" onclick="toStocks()">Stocks and Sentiment</a>
+    <a href="#" onclick="toSummaries()">Law Compliance Summaries</a>
+</div>
+
+<div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776; </button>
+    <h1 align="center">
+        {{ displayName }} - ({{ ticker }})
+    </h1>
+    <div id='stocks' class='dash-tab' style='display: block;'>
+        <h2 class="header">
+            Stocks and Sentiment
+        </h2>
+        <div class='card' id='stocks-info'>
+            <div class="container" style="text-align: center;">
+                <table style="width:100%">
+                    <tr>
+                        <td class="stocks-info-cell"><strong>Ask:</strong> {{ stockInfo['ask'] }}</td>    
+                        <td class="stocks-info-cell"><strong>Bid:</strong> {{ stockInfo['bid'] }}</td>
+                        <td class="stocks-info-cell"><strong>Weekly High:</strong> {{ stockInfo['weeklyHigh'] }}</td>
+                        <td class="stocks-info-cell"><strong>Weekly Low:</strong> {{ stockInfo['weeklyLow'] }}</td>
+                        <!-- <td class="stocks-info-cell"><strong>Daily Movement:</strong> {{ stockInfo['dailyMvmt'] }}</td> -->
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="card" id='stocks-graph'>
+            <div class=container>
+                <h3 style="color: black;">Stock vs Sentiment Graph</h3>
+                <div style="text-align: center;">
+                    {{ script|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='summaries' class='dash-tab' style='display: none;'>
+        <h2 class='header'>
+            Law Compliance Summaries
+        </h2>
+
+        <!-- Loading summaries graphic-->
+        <!-- <div id="loading" style="text-align: center; position: absolute; left:50%; top:10%;">
+            <br style="line-height:22px;"></br>
+            <img id="loading-image"  src="{{ url_for('static', filename='loadingDash.gif') }}" alt='Summaries loading...'>
+            <h3 style="text-align: center; padding-top: 10px;">Loading summaries...</h3>
+        </div> -->
+
+        <!-- SUMMARIES CUSTOMIZE FORM -->
+        <button type="button" class="collapsible"><h6><strong>Change how your summaries are generated</strong></h6></button>
+        <div class="content">
+            
+            <div class='card' style='padding-bottom: 15px;'>
+                <div class='dash-tab container' style='padding-left: 16%; text-align: center;'>
+                    <form class="col-md-8 form" action="{{url_for('summaries')}}" target='summaries-iframe' method="post">
+                        <fieldset class="form-group">
+                            <legend>Choose your source(s)</legend>
+                            <div style='text-align: center;'>
+                                <table>
+                                    <tr>
+                                        <td style='padding-right: 5px;'><input type="checkbox" id='source-cb-1' name="summaries-sources[]" value="nat_law_review" /></td>
+                                        <td><p>National Law Review</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='padding-right: 5px;'><input type="checkbox" id='source-cb-1' name="summaries-sources[]" value="jdsupra" /></td>
+                                        <td><p>JD Supra</p></td>
+                                    </tr>
+                                </table>  
+                            </div>                  
+                        </fieldset>
+                        <br> 
+                        <fieldset class="form-group">
+                            <legend>Number of Summaries per Sector</legend>
+                            <input type="number" id="multiplier" name="summaries-multiplier" min="1" max="5" step="1">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <legend>Change what sectors to get articles from for...</legend>
+                                <div class='flex-container'>
+                                    {% for source, sectors in sector_options.items() %}
+                                        <div class='flex-child'>
+                                            <!-- HEADER FOR EACH SOURCE -->
+                                            <div style='text-align: center;'>
+                                                <h4 class='header'>{{ source }}</h4>
+                                            </div>
+                                            <!-- collection of checkboxes for each possible sector in the soruce-->
+                                            <div style="text-align: left;">
+                                                {% for sector, url in sectors.items() %}
+                                                    <table>
+                                                        <tr>
+                                                            <td style='padding-right: 5px;'><input type="checkbox" id='sector-cb{{ loop.index0 }}' name="summaries-sectors[]" value="{{source}}_{{sector}}_{{url}}" /></td>
+                                                            <td><p>{{sector}}</p></td>
+                                                        </tr>
+                                                    </table>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </fieldset>
+        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark" onclick="document.getElementById('loading-text').style.display='block';">Update Settings</button>
+                        </div>
+                        <div id='loading-text' style='display: none; text-align: center;'>
+                            <br>
+                            <p style='color: black;'>loading summaries...</p>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
+        <!-- summaries iframe -->
+        <div class='card' style='margin: 0%; margin-top: 3%;'>
+            <div class='container' style='text-align: center;'>
+                <iframe name='summaries-iframe' id='summaries-iframe' src="{{ url_for('summaries') }}" frameBorder="0" style='overflow: hidden; height: 1000px; width:100%' onload="document.getElementById('loading-text').style.display='none';"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+
+</script>
+
+<style>
+
+    .flex-container {
+        display: inline-flex;
+        margin-right: 20px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .flex-child {
+        flex: 1;
+        border: 1px solid grey;
+        padding: 15px;
+        overflow: auto;
+
+    }  
+
+    .flex-child:first-child {
+        margin-right: 20px;
+    } 
+
+    /* Style the button that is used to open and close the collapsible content */
+    .collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 12px;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .collapsible:hover {
+    background-color: #ccc;
+    }
+
+    /* Style the collapsible content. Note: hidden by default */
+    .content {
+    padding: 18px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: whitesmoke;
+    }
+</style>
+
+{% endblock %}

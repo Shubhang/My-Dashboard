@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center;">
+    <h1>Whoops! {{ companyName }} could not be found or the dashboard failed to generate.</h1>
+    <h2>Check for typos, or search for another company.</h2>
+    <p><a href="{{ url_for('home') }}">Back</a></p>
+</div>
+{% endblock %}

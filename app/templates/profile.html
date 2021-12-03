@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Profile page</h1>
+<br>
+<div style="text-align: center;">
+    <img style="border-radius: 50%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="{{url_for('static', filename='userImage.png')}}" alt="Your beautiful face">
+    <h2>Hello {{ current_user.username }}</h2>
+    <p>
+        <a href="{{ url_for('edit_profile') }}">Edit your profile</a>
+    </p>
+    <br>
+    <p>
+        <a href=" {{ url_for('delete_profile') }} ">
+            <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your profile?')">Delete your profile</button>
+        </a>
+    </p>
+    <br>
+    </br>
+</div>
+
+{% endblock %}

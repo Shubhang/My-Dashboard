@@ -1,0 +1,89 @@
+<html>
+    <head>
+
+    <!-- loading script-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Other CSS-->
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.2.min.css" rel="stylesheet" type="text/css"> -->
+    
+    <!-- JS files-->
+    <script src="{{url_for('static', filename='sidebar.js')}}"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.2.min.js"></script>
+
+    <title>MY Dashboard</title>
+
+    </head>
+
+    <body class='site-back'>
+      <nav class="navbar navbar-custom navbar-expand-lg navbar-fixed-top">
+        <div class='container'>
+          <!-- Brand Logo-->
+          <a class="navbar-brand mb-0 h1" style='color: black;' href="{{ url_for('home') }}">
+            <!-- <img src="{{ url_for('static', filename='EYDash1.png') }}" alt="" width="50" height="50" style="padding: 2; margin: 0;"> -->
+            MY Dashboard
+          </a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- navbar Links-->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                {% if current_user.is_anonymous %}
+                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                {% else %}
+                <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                {% endif %}
+              </li>
+              <li class="nav-item">
+                {% if current_user.is_anonymous %}
+                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                {% else %}
+                <a class="nav-link" href="{{ url_for('profile') }}">My profile</a>
+                {% endif %}
+              </li>
+              <li class="nav-item">
+                {% if not current_user.is_anonymous %}
+                <a class="nav-link" href="{{ url_for('create_group') }}">Create Group</a>
+                {% endif %}
+              </li>
+            </ul>
+
+            {% if current_user.is_authenticated %}
+              <!-- Search Bar -->
+              <form class="form-inline my-2 my-lg-0" action="{{ url_for('dashboard') }}" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search..." name="company">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="$('#loading').show(); $('#block-div').hide();">Search</button>
+              </form>
+            {% endif %}
+
+          </div>
+        </div>
+      </nav>
+
+      <!-- Loading graphic-->
+      <div id="loading" style="display:none; text-align: center;">
+        <br style="line-height:22px;"></br>
+        <img id="loading-image"  style='width: 15%; height: 30%;' src="{{ url_for('static', filename='loadingDash.gif') }}" alt='Dashboard loading...'>
+        <h3 style="text-align: center; padding-top: 10px;">Loading...</h3>
+      </div>
+
+    <div id='block-div'>
+        {% block content %}{% endblock %}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+2020-07-26 12:45:38,197 ERROR: Request finalizing failed with an error while handling an error [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1975]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1969, in finalize_request
+    response = self.process_response(response)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2268, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\sessions.py", line 378, in save_session
+    val = self.get_signing_serializer(app).dumps(dict(session))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\itsdangerous\serializer.py", line 166, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\itsdangerous\url_safe.py", line 42, in dump_payload
+    json = super(URLSafeSerializerMixin, self).dump_payload(obj)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\itsdangerous\serializer.py", line 133, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\json\tag.py", line 305, in dumps
+    return dumps(self.tag(value), separators=(",", ":"))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\json\__init__.py", line 211, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\__init__.py", line 412, in dumps
+    **kw).encode(obj)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\encoder.py", line 296, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\encoder.py", line 378, in iterencode
+    return _iterencode(o, 0)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\json\__init__.py", line 100, in default
+    return _json.JSONEncoder.default(self, o)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\encoder.py", line 273, in default
+    o.__class__.__name__)
+TypeError: Object of type Company is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1969, in finalize_request
+    response = self.process_response(response)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2268, in process_response
+    self.session_interface.save_session(self, ctx.session, response)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\sessions.py", line 378, in save_session
+    val = self.get_signing_serializer(app).dumps(dict(session))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\itsdangerous\serializer.py", line 166, in dumps
+    payload = want_bytes(self.dump_payload(obj))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\itsdangerous\url_safe.py", line 42, in dump_payload
+    json = super(URLSafeSerializerMixin, self).dump_payload(obj)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\itsdangerous\serializer.py", line 133, in dump_payload
+    return want_bytes(self.serializer.dumps(obj, **self.serializer_kwargs))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\json\tag.py", line 305, in dumps
+    return dumps(self.tag(value), separators=(",", ":"))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\json\__init__.py", line 211, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\__init__.py", line 412, in dumps
+    **kw).encode(obj)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\encoder.py", line 296, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\encoder.py", line 378, in iterencode
+    return _iterencode(o, 0)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\json\__init__.py", line 100, in default
+    return _json.JSONEncoder.default(self, o)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\simplejson\encoder.py", line 273, in default
+    o.__class__.__name__)
+TypeError: Object of type Company is not JSON serializable
+2020-07-26 12:48:36,980 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-30 13:33:42,627 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-30 13:34:06,321 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-30 13:40:40,276 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:13:54,928 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:14:52,726 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:17:09,543 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:18:26,464 ERROR: Exception on /dashboard [POST] [in c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\grego\appdata\local\programs\python\python37-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 146, in dashboard
+    return make_dashboard(session['companyName'])
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\dashboard.py", line 60, in dashboard
+    stockInfo['dailyMvmt'] = companyObject.getStockPriceChange()
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\company.py", line 118, in getStockPriceChange
+    return soup.findAll('span', {"data-reactid": "51"})[0].contents[0]   # broken
+IndexError: list index out of range
+2020-08-02 12:19:13,958 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:25:40,823 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:27:52,608 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:28:37,183 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:29:54,497 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:30:23,210 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:31:46,461 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:32:43,918 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-08-02 12:37:52,782 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]

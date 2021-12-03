@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Create a Group</h1>
+    <hr>
+    <div style='margin-left: 10%; margin-right: 10%;'>
+        <p>Groups are used to share a set of commonly searched for companies. Create a group here, which you can share a link to later for others to share these companies and change the list.</p>
+    </div>
+    <hr>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p style="text-align: center;">
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}<br>
+            {% for error in form.name.errors %}
+            <span style="color: red; text-align: center;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p style="text-align: center;">
+            {{ form.description.label }}<br>
+            <div style='margin-left: 10%; margin-right: 10%;'>
+                {{ form.description }}
+            </div><br>
+            {% for error in form.description.errors %}
+            <span style="color: red; text-align: center;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p style="text-align: center;">{{ form.submit() }}</p>
+    </form>
+{% endblock %}

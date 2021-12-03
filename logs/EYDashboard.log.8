@@ -1,0 +1,94 @@
+2020-07-16 16:14:18,078 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:14:25,307 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:14:33,436 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:14:38,263 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:16:02,923 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:17:47,443 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:18:11,930 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:19:23,198 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:19:35,472 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:21:10,494 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:29:31,047 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:34:07,366 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:34:23,867 ERROR: Exception on /groups/4/group1 [GET] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 89, in groups
+    return render_template('group.html', title=group_name, group=group)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 9, in template
+    {{% if group.description %}}
+jinja2.exceptions.TemplateSyntaxError: unexpected '%'
+2020-07-16 16:34:58,252 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:35:08,103 ERROR: Exception on /groups/4/group1 [GET] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 89, in groups
+    return render_template('group.html', title=group_name, group=group)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\group.html", line 9, in template
+    {{% if group.description != '' %}}
+jinja2.exceptions.TemplateSyntaxError: unexpected '%'
+2020-07-16 16:35:45,876 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:45:55,031 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:46:43,047 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-16 16:48:34,980 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-17 00:09:13,365 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-22 11:30:09,327 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-22 11:37:37,352 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-22 11:39:19,345 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-22 11:40:59,789 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-22 11:49:33,075 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-22 11:53:21,558 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]

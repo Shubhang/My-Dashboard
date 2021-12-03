@@ -1,0 +1,97 @@
+2020-07-13 14:47:29,007 ERROR: Exception on /summaries [GET] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 124, in summaries
+    summaries = getCompliance(Company(companyName), source, multiplier=multiplier, custom_sectors=override_sectors) # update later when we add preferences
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\summary\compliance.py", line 239, in getCompliance
+    complianceURLs = yahooToJdsupra(yahoo_sector)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\summary\compliance.py", line 216, in yahooToJdsupra
+    URLIndices.extend(yahoo_to_jdsupra_mapping[yahooSector])
+NameError: name 'URLIndices' is not defined
+2020-07-13 14:48:05,757 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 14:58:40,940 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 14:58:51,658 ERROR: Exception on /dashboard [POST] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 83, in dashboard
+    return make_dashboard(companyName)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\dashboard.py", line 243, in dashboard
+    sector_options=sector_options
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\dashboard.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\base.html", line 80, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\templates\dashboard.html", line 85, in block "content"
+    {% for i, (sector, url) in enumerate(sectors.items()) %}
+jinja2.exceptions.UndefinedError: 'enumerate' is undefined
+2020-07-13 15:00:15,068 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:03:40,798 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:05:54,522 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:07:48,543 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:10:48,136 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:13:50,616 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:21:46,725 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:24:03,560 ERROR: Exception on /summaries [GET] [in c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\grego\onedrive\projects\python projects\ey\eyflask_virtualenv\eyvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\routes.py", line 122, in summaries
+    summaries = getCompliance(Company(companyName), source, multiplier=multiplier, custom_sectors=override_sectors) # update later when we add preferences
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\summary\compliance.py", line 321, in getCompliance
+    summary = articleSummary(url, source)
+  File "C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\backend\summary\compliance.py", line 94, in articleSummary
+    text = theDiv.find_all("p")
+AttributeError: 'NoneType' object has no attribute 'find_all'
+2020-07-13 15:25:10,217 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:29:49,977 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:32:05,348 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:33:10,570 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]
+2020-07-13 15:34:06,544 INFO: EY Dashboard startup [in C:\Users\grego\Documents\GitHub\EY-DashboardV2\EYvenv\app\__init__.py:48]

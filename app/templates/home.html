@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="text-align: center; margin: 4%;" id='block-div'>
+    <br></br>
+    <div style="color:white">
+        <h1>Welcome to MY Dashboard!</h1>
+    </div>
+    
+    <!-- Top companies list -->
+    {% if company_names != {} %}
+        <br></br>
+        <div class='card company-list'>
+            <div class='container'>
+                <h4>Your top {{company_names|length}} companies</h4>
+                <br>
+                    {% for company, company_display_name in company_names.items(): %}
+                        <form action="{{ url_for('dashboard') }}" method="post">
+                            <input class="form-control mr-sm-2" type="hidden" value="{{company}}" name="company">
+                            <button type="submit" class="btn btn-dark" onclick="$('#loading').show(); $('#block-div').hide();">{{company_display_name}}</button>
+                        </form>
+                    {% endfor %}
+            </div>
+        </div>
+
+    <br>
+    <hr>
+    <br>
+    {% else %} 
+    <br>
+    <br>   
+    {% endif %}
+    
+
+    <div id='intro' style='color: white; text-align: left; margin: 4%;'>
+        <h3>What is MY Dashboard?</h3>
+        <p>
+            MY Dashboard is a result of a collaboration between EY and the Penn State Nittany Data Labs (NDL). Started in early 2020, this project was designed by Greg Glatzer, Jordan Williard, and Shubhang Sharma along with the guidance of Ryan Ward. Throughout the year, we would meet on a weekly or bi-weekly basis to develop the project to what you see today.
+        </p>
+        <h3>What does MY Dashboard do? </h3>
+        <p>
+            The objective of this project is to build a tool that aids consultants in their day-to-day interactions with the clients they are working with. The vision is that consultants can log on to the dashboard and type in the name of the company they are going to be meeting with that day and get an overview of what is happening in the world relevant to that company. The dashboard generated will provide the user with many insightful pieces of information, including statistics related to stocks for the week, an AI-driven sentiment vs. time graph to help predict stock prices, and law compliance summaries relevant to the company. To get a better understanding of how to use the tool and all it offers, see the video below.
+        </p>
+        <p>
+            In addition to catering to the individual user, MY Dashboard also presents functionality for working in a team. The “Create Group” tab allows users to add companies to a group and share the group link for other users to view and edit.
+        </p>
+        <p>
+            We hope you enjoy exploring our tool that we put so much work into! We enjoyed learning how to create MY Dashboard, and hope that it accomplishes the task we set out to achieve. Enjoy!
+        </p>
+        <h3>Getting Started</h3>
+        <p>
+            Here is a brief introduction to the tool to get you started using MY Dashboard!
+        </p>
+        <div id='intro-video' style='text-align: center;'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HrJmINKiuuc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id='about' style='margin: 4%; text-align: left; color: white; margin: 4px;'>
+        <h3>About Us</h3>
+        <table style='border: none;'>
+            <tr>
+                <td style='width: 300px;'>
+                    <h4 style='color: white;'>Shubhang Sharma</h4>
+                    <img src="{{ url_for('static', filename='about/Shubhang.png')}} " alt="Shubhang" style="width:276px; height:341px;">
+                </td>
+                <td>
+                    <p>
+                        Shubhang is a rising sophomore at Penn State studying Computer Science. Currently, he is working on a startup idea to leverage machine learning in healthcare. He is also researching biomarkers for Alzheimer’s using Spectroscopy and Machine Learning. He is the treasurer of the Penn State ACM and Nittany Data Labs student clubs. He enjoys playing tennis and badminton.
+                    </p>
+                    <p><b>Linkedin:</b> <a href='https://www.linkedin.com/in/shubhang1/'>https://www.linkedin.com/in/shubhang1/</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td style='width: 300px;'>
+                    <h4 style='color: white;'>Jordan Williard</h4>
+                    <img src="{{ url_for('static', filename='about/Jordan.jpg')}} " alt="Jordan" style="width:276px; height:276px;">
+                </td>
+                <td>
+                    <p>
+                        Jordan Williard is a rising senior at Penn State University studying Applied Data Science. With a view of Data Science as a universal tool for seemingly endless solutions, Jordan hopes to start a career in consulting in order to revolutionize understanding and processes for clients in every industry. Like many aspiring Data Scientists,  Jordan is passionate about the discovery, analysis, and understanding that new technologies provide. In his free time, he enjoys hiking, skydiving, and riding motorcycles.
+                    </p>
+                    <p><b>Linkedin:</b> <a href='https://www.linkedin.com/in/jordanwilliard/'>https://www.linkedin.com/in/jordanwilliard/</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td style='width: 300px;'>
+                    <h4 style='color: white;'>Greg Glatzer</h4>
+                    <img src="{{ url_for('static', filename='about/Greg.jpg')}} " alt="Greg" style="width:276px; height:317px;">
+                </td>
+                <td>
+                    <p>
+                        Greg is a rising sophomore at Penn State University studying Applied Data Science. Greg works tirelessly to improve his own understandings of how the world works in the age of "big data". He currently works on a team developing AI for use in the medical field, where he continues to grow his passion of putting powerful technology in the hands of the everyday user. In his spare time, Greg enjoys playing the clarinet in jazz and classical settings.
+                    </p>
+                    <p><b>Linkedin:</b> <a href='https://www.linkedin.com/in/gregory-glatzer/'>https://www.linkedin.com/in/gregory-glatzer/</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- Loading graphic-->
+<div id="loading" style="display:none; text-align: center;">
+    <br style="line-height:22px;"></br>
+    <img id="loading-image"  style='width: 15%; height: 30%;' src="{{ url_for('static', filename='loadingDash.gif') }}" alt='Dashboard loading...'>
+    <h3 style="text-align: center; padding-top: 10px;">Loading...</h3>
+</div>
+
+<style>
+    td {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:20px;
+  padding-left: 20px;   
+}
+
+td:first-child {
+  padding-left:20px;
+  padding-right:0;
+}
+</style>
+{% endblock %}
